@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DE ORB — Sovereign Counter-Drone Intelligence</title>
+    <meta name="description"
+        content="One modular platform to secure airports, banks, and borders. Passive multi-sensor fusion, EU-sovereign, commercial today, defense grade tomorrow.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Modular CSS Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/radar.css">
+</head>
+
+<body>
+
+    <!-- Full-Screen Header Navpill with Official Logo -->
+    <header>
+        <div class="navpill">
+            <a href="#top" class="logo-brand">
+                <img src="assets/images/de_orb_logo.png" alt="DE ORB Logo" class="logo-img">
+                <span class="logo-tag">SOVEREIGN C-UAS</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution">Platform</a></li>
+                    <li><a href="#market">Market</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                </ul>
+            </nav>
+
+            <a href="mailto:varnim@de-orb.com?subject=DE%20ORB%20Executive%20Briefing%20Request" onclick="openEmailBriefing(event)" class="nav-cta">
+                <span>Request briefing</span>
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                    <path d="M4.64 11.37L11.31 4.7M11.31 11.37V4.7H4.64" stroke-width="2"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Full-Screen Hero Section -->
+    <section class="hero" id="top">
+        <div class="hero-overlay"></div>
+        
+        <!-- Animated Background Mesh SVG -->
+        <svg class="mesh-bg" viewBox="0 0 1400 700" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#33E27A" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#33E27A" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+            <g stroke="url(#fade)" stroke-width="1" fill="none">
+                <path d="M0,560 C200,500 300,540 500,500 C700,460 800,520 1000,480 C1150,450 1300,500 1400,470" />
+                <path d="M0,600 C200,540 300,580 500,540 C700,500 800,560 1000,520 C1150,490 1300,540 1400,510" />
+                <path d="M0,640 C200,580 300,620 500,580 C700,540 800,600 1000,560 C1150,530 1300,580 1400,550" />
+                <path d="M0,680 C200,620 300,660 500,620 C700,580 800,640 1000,600 C1150,570 1300,620 1400,590" />
+            </g>
+        </svg>
+
+        <div class="wrap">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="bracket-label">Pre-seed · Nuremberg · 2026</div>
+                    <h1>The Internet <span class="accent">of Airspace</span> Defence</h1>
+
+                    <ul class="checklist">
+                        <li><span class="tick">✓</span> Any sensor, any node, any site</li>
+                        <li><span class="tick">✓</span> Fixed, vehicle, or backpack deployed</li>
+                        <li><span class="tick">✓</span> Detect once. Cover a whole district.</li>
+                    </ul>
+
+                    <div class="hero-sub">
+                        Passive multi-sensor fusion that keeps <b>one confirmed track</b> — even when a drone goes silent. Commercial today, defense grade tomorrow.
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="mailto:varnim@de-orb.com?subject=DE%20ORB%20Executive%20Briefing%20Request" onclick="openEmailBriefing(event)" class="btn btn-primary">Request a briefing</a>
+                        <a href="#solution" class="btn btn-ghost">Explore the platform ↗</a>
+                    </div>
+                </div>
+
+                <!-- Live C2 Interactive Radar Visualizer -->
+                <div class="hero-visual">
+                    <div class="visual-header">
+                        <span>DE ORB // MULTI-SENSOR MESH</span>
+                        <div class="visual-controls">
+                            <span class="hud-chip">FUSED TRACK: 0.87</span>
+                            <span class="hud-chip hud-chip-cyan">ACTIVE NODES: 5</span>
+                        </div>
+                    </div>
+                    <canvas id="radarCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported By Strip -->
+    <div class="strip">
+        <div class="wrap">
+            <div class="label">Supported by / development &amp; PoC</div>
+            <div class="names">
+                <span>Siemens Advanta</span>
+                <span>Hochschule Hamm-Lippstadt</span>
+                <span>Inchcape Shipping Services</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="wrap">
+            <div class="bracket-label">The problem</div>
+            <div class="section-head">
+                <h2>The drone threat is real, cheap, and escalating</h2>
+                <p>Civilian airspace is now a front line. Airports, energy sites, rail, and ports across Europe face repeated incursions — and most capable defenses are foreign, unaffordable for civilians, or both.</p>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-cell">
+                    <div class="num">4 hrs</div>
+                    <div class="cap">Munich Airport shutdown, May 2026</div>
+                    <p>Munich Airport suspended operations after drone incursions. Civilian airspace is now a front line.</p>
+                </div>
+                <div class="stat-cell">
+                    <div class="num">192</div>
+                    <div class="cap">Illegal drone flights near German airports, 2025</div>
+                    <p>Airports, energy sites, rail, and ports across Europe face repeated incursions.</p>
+                </div>
+                <div class="stat-cell">
+                    <div class="num">5</div>
+                    <div class="cap">EU states with state-linked airspace violations</div>
+                    <p>Most capable CUAS systems are US or Israeli origin, creating strategic dependency.</p>
+                </div>
+            </div>
+
+            <div class="gap-banner">
+                <b>The dual-use gap:</b> military-grade CUAS is unaffordable for civilians, and civilian kit is too weak for defense. No EU-sovereign platform serves both. <b>We do.</b>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="howitworks">
+        <div class="wrap">
+            <div class="bracket-label">How it works</div>
+            <div class="section-head">
+                <h2>Every node, now connected to one fused track</h2>
+                <p>Every DE ORB node carries multiple passive sensors. Their overlapping coverage streams to one fusion brain that classifies, tracks, and cues the response.</p>
+            </div>
+
+            <div class="mesh-stage">
+                <svg viewBox="0 0 1140 560" preserveAspectRatio="xMidYMid slice">
+                    <g stroke="#233731" stroke-width="1" fill="none" opacity="0.9">
+                        <path d="M-50,460 C150,400 300,440 500,400 C700,360 850,410 1050,380 C1150,365 1200,380 1250,370" />
+                        <path d="M-50,500 C150,440 300,480 500,440 C700,400 850,450 1050,420 C1150,405 1200,420 1250,410" />
+                        <path d="M-50,540 C150,480 300,520 500,480 C700,440 850,490 1050,460 C1150,445 1200,460 1250,450" />
+                        <path d="M-50,420 C150,360 300,400 500,360 C700,320 850,370 1050,340 C1150,325 1200,340 1250,330" />
+                    </g>
+                    <g stroke="#33E27A" stroke-opacity="0.55" stroke-width="1">
+                        <line class="link-line" x1="185" y1="215" x2="500" y2="255" />
+                        <line class="link-line" x1="330" y1="330" x2="500" y2="255" />
+                        <line class="link-line" x1="500" y1="255" x2="720" y2="180" />
+                        <line class="link-line" x1="500" y1="255" x2="760" y2="330" />
+                        <line class="link-line" x1="760" y1="330" x2="960" y2="270" />
+                        <line class="link-line" x1="500" y1="255" x2="500" y2="400" />
+                    </g>
+                    <g>
+                        <circle cx="500" cy="255" r="7" fill="#33E27A" />
+                        <circle class="node-pulse" cx="500" cy="255" r="7" fill="none" stroke="#33E27A" stroke-width="1.4" />
+                        <circle cx="760" cy="330" r="6" fill="#33E27A" />
+                        <circle class="node-pulse" style="animation-delay:.6s" cx="760" cy="330" r="6" fill="none" stroke="#33E27A" stroke-width="1.4" />
+                    </g>
+                </svg>
+                <div class="hud-node" style="top:22%; left:11%;"><span class="dot"></span>RF NODE</div>
+                <div class="hud-node" style="top:53%; left:22%;"><span class="dot"></span>ACOUSTIC</div>
+                <div class="hud-node active" style="top:38%; left:41%;"><span class="dot"></span>DE ORB NODE</div>
+                <div class="hud-node" style="top:20%; left:60%;"><span class="dot"></span>THERMAL / EO-IR</div>
+                <div class="hud-node active" style="top:52%; left:64%;"><span class="dot"></span>DE ORB NODE</div>
+                <div class="hud-node" style="top:38%; left:81%;"><span class="dot"></span>mmWAVE</div>
+                <div class="hud-node" style="top:66%; left:41%;"><span class="dot"></span>FUSED TRACK · 0.87</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform / Solution Section -->
+    <section class="solution" id="solution">
+        <div class="wrap">
+            <div class="bracket-label">The platform</div>
+            <div class="section-head">
+                <h2>A decentralized tactical network of nodes</h2>
+                <p>Patent filing ongoing on the fusion architecture. Proof-of-concept underway.</p>
+            </div>
+
+            <div class="diagram-card">
+                <div class="node-row">
+                    <div class="node"><div class="icon">RF</div><div class="name">RF Scanner</div><div class="sub">Passive RF monitoring</div></div>
+                    <div class="node"><div class="icon">5G</div><div class="name">Passive Radar</div><div class="sub">DVB-T / 5G reflections</div></div>
+                    <div class="node"><div class="icon">IR</div><div class="name">EO / IR Camera</div><div class="sub">Thermal contrast</div></div>
+                    <div class="node"><div class="icon">AC</div><div class="name">Acoustic Sensor</div><div class="sub">Rotor blade-passing freq.</div></div>
+                </div>
+
+                <div class="pipeline">
+                    <div class="pipe-step">Sync &amp; ingest</div>
+                    <span class="pipe-arrow">→</span>
+                    <div class="pipe-step">Fuse</div>
+                    <span class="pipe-arrow">→</span>
+                    <div class="pipe-step">Classify</div>
+                    <span class="pipe-arrow">→</span>
+                    <div class="pipe-step">Track</div>
+                    <span class="pipe-arrow">→</span>
+                    <div class="pipe-step final">Respond · cue effector</div>
+                </div>
+            </div>
+
+            <div class="why-grid">
+                <div class="bcard why-card">
+                    <div class="tag">01 · Accurate</div>
+                    <h3>One confirmed track, not five conflicting alerts</h3>
+                    <p>Cross-sensor fusion cuts false alarms by 10×, combining per-sensor confidence via Bayesian log-odds and a Kalman-filter tracker that survives RF-cutoff events.</p>
+                    <div class="metric">&lt;90% detection confidence</div>
+                </div>
+
+                <div class="bcard why-card">
+                    <div class="tag">02 · Scalable</div>
+                    <h3>Fixed site, vehicle, or backpack in 30 minutes</h3>
+                    <p>Same screen, same training — add nodes to scale coverage from a single building to an entire district without re-procuring a system.</p>
+                    <div class="metric">500m–50km coverage</div>
+                </div>
+
+                <div class="bcard why-card">
+                    <div class="tag">03 · Math fixed</div>
+                    <h3>A €500 response to a €30K threat</h3>
+                    <p>Passive detection today; a directed-energy laser effector in Phase 2. The cost exchange kinetic defense could never sustain, finally works.</p>
+                    <div class="metric">&lt;€500 / drone</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHT THEME CONTRAST SECTION: Inputs Strip -->
+    <section class="inputs">
+        <div class="wrap">
+            <div class="bracket-label">Any sensor. Any protocol.</div>
+            <div class="section-head">
+                <h2>Cheap nodes reuse what's already on site</h2>
+                <p>Every asset becomes defensible — existing cameras, radar, and RF gear feed straight into the fusion engine alongside DE ORB's own hardware.</p>
+            </div>
+
+            <div class="input-grid">
+                <div class="input-cell"><span class="pill">RF</span><div class="iname">Passive RF Scanner</div></div>
+                <div class="input-cell"><span class="pill">Radar</span><div class="iname">5G / DVB-T Passive Radar</div></div>
+                <div class="input-cell"><span class="pill">EO/IR</span><div class="iname">Thermal Camera</div></div>
+                <div class="input-cell"><span class="pill">Acoustic</span><div class="iname">Rotor Signature Mic</div></div>
+                <div class="input-cell"><span class="pill">mmWave</span><div class="iname">Micro-Doppler Sensor</div></div>
+                <div class="input-cell"><span class="pill">Effector</span><div class="iname">Directed-Energy Laser · Phase 2</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="compare">
+        <div class="wrap">
+            <div class="bracket-label">Scale &amp; network effect</div>
+            <div class="section-head">
+                <h2>Protect a district, not just a building</h2>
+                <p>A conventional system guards one asset at high cost, with blind spots and a single point of failure. DE ORB drops a low-cost node on every building — and coverage compounds.</p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Conventional C-UAS</th>
+                            <th class="deorb">DE ORB</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rowlabel">Cost to add a site</td>
+                            <td>A new full system (€€€)</td>
+                            <td class="deorb">One node (€)</td>
+                        </tr>
+                        <tr>
+                            <td class="rowlabel">Coverage</td>
+                            <td>Single asset, range-limited</td>
+                            <td class="deorb">Overlapping, district-wide</td>
+                        </tr>
+                        <tr>
+                            <td class="rowlabel">If a unit fails</td>
+                            <td>The site goes dark</td>
+                            <td class="deorb">Mesh self-heals, picture holds</td>
+                        </tr>
+                        <tr>
+                            <td class="rowlabel">Scaling up</td>
+                            <td>Re-procure &amp; install per site</td>
+                            <td class="deorb">Drop in more nodes</td>
+                        </tr>
+                        <tr>
+                            <td class="rowlabel">Sovereignty</td>
+                            <td>Often non-EU content</td>
+                            <td class="deorb">100% EU content, SAFE-eligible</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market" id="market">
+        <div class="wrap">
+            <div class="bracket-label">Market opportunity</div>
+            <div class="section-head">
+                <h2>A market growing faster than the threat itself</h2>
+                <p>Driven by NIS2 mandates, NATO commitments, and a documented, accelerating threat.</p>
+            </div>
+
+            <div class="market-grid">
+                <div class="bcard market-card">
+                    <div class="tag">TAM</div>
+                    <div class="val">$20.3B</div>
+                    <div class="desc">Global CUAS market by 2030</div>
+                    <div class="cagr">25.1% CAGR · 2025–2030</div>
+                </div>
+
+                <div class="bcard market-card">
+                    <div class="tag">SAM</div>
+                    <div class="val">$10.16B</div>
+                    <div class="desc">European CUAS market by 2030</div>
+                    <div class="cagr">34.7% CAGR · 2025–2030</div>
+                </div>
+
+                <div class="bcard market-card">
+                    <div class="tag">SOM</div>
+                    <div class="val">$1.2B</div>
+                    <div class="desc">European civilian CUAS market by 2030</div>
+                    <div class="cagr">27.5% CAGR · 2025–2030</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHT THEME CONTRAST SECTION: Capabilities with Real Pictures -->
+    <section class="capabilities" id="capabilities">
+        <div class="wrap">
+            <div class="bracket-label">Capabilities</div>
+            <div class="section-head">
+                <h2>Built for a district, not a building</h2>
+                <p>One low-cost node per asset, overlapping coverage that compounds — instead of one costly system with blind spots.</p>
+            </div>
+
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-visual">
+                        <img src="assets/images/counter_uas.png" alt="Airports & Critical Infrastructure">
+                    </div>
+                    <div class="cap-body">
+                        <div class="cap-tags"><span class="cap-tag">Detect-to-Alert</span><span class="cap-tag">2026</span></div>
+                        <h4>Airports &amp; critical infrastructure</h4>
+                        <p>Overlapping node coverage across runways, fences, and terminals — one fused picture, no blind spots.</p>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-visual">
+                        <img src="assets/images/cbrn_recon.png" alt="Banks & Energy Sites">
+                    </div>
+                    <div class="cap-body">
+                        <div class="cap-tags"><span class="cap-tag">Sense-to-Warn</span><span class="cap-tag">2026</span></div>
+                        <h4>Banks &amp; energy sites</h4>
+                        <p>Passive, zero-emission nodes that reuse existing rooftops and fencing — no new spectrum footprint to defend.</p>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-visual">
+                        <img src="assets/images/maritime_mda.png" alt="Borders & Public Events">
+                    </div>
+                    <div class="cap-body">
+                        <div class="cap-tags"><span class="cap-tag">Track-to-Act</span><span class="cap-tag">Phase 2</span></div>
+                        <h4>Borders &amp; public events</h4>
+                        <p>Vehicle or backpack-deployed nodes stand up coverage in 30 minutes for temporary, high-footfall perimeters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Track Section -->
+    <section class="roadmap">
+        <div class="wrap">
+            <div class="bracket-label">Roadmap</div>
+            <div class="section-head">
+                <h2>Path to sovereign dominance</h2>
+                <p>Phased rollout from initial prototype verification to NATO & EU defense grade laser effectors.</p>
+            </div>
+
+            <div class="road-track">
+                <div class="road-phase">
+                    <div class="yr">2025 // PHASE 0</div>
+                    <h4>Algorithm PoC</h4>
+                    <ul>
+                        <li>Multi-sensor fusion brain</li>
+                        <li>Bayesian log-odds tracker</li>
+                        <li>Siemens Advanta partnership</li>
+                    </ul>
+                </div>
+
+                <div class="road-phase">
+                    <div class="yr">2026 // PHASE 1</div>
+                    <h4>DE ORB Node v1</h4>
+                    <ul>
+                        <li>German Airport pilots</li>
+                        <li>COTS sensor ingestion</li>
+                        <li>Commercial launch</li>
+                    </ul>
+                </div>
+
+                <div class="road-phase">
+                    <div class="yr">2027 // PHASE 2</div>
+                    <h4>District Expansion</h4>
+                    <ul>
+                        <li>Mesh auto-healing</li>
+                        <li>NIS2 compliance suite</li>
+                        <li>EU market scaling</li>
+                    </ul>
+                </div>
+
+                <div class="road-phase">
+                    <div class="yr">2028+ // PHASE 3</div>
+                    <h4>Laser Effector</h4>
+                    <ul>
+                        <li>Directed energy integration</li>
+                        <li>Defense-grade C2 export</li>
+                        <li>NATO STANDAG 4586</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHT THEME: Go-To-Market Section -->
+    <section class="gtm">
+        <div class="wrap">
+            <div class="bracket-label">Go-to-market</div>
+            <div class="section-head">
+                <h2>Civilian infrastructure first</h2>
+                <p>We sell to system aggregators first — the prime contractors and integration houses with active procurement pipelines — for a high-value, low-friction route to market.</p>
+            </div>
+
+            <div class="gtm-grid">
+                <div class="gtm-card primary">
+                    <div class="badge">Primary</div>
+                    <h4>System integrators &amp; aggregators</h4>
+                    <p>Prime contractors and integration houses with active procurement pipelines.</p>
+                </div>
+                <div class="gtm-card secondary">
+                    <div class="badge">Secondary</div>
+                    <h4>Airports &amp; critical infrastructure</h4>
+                    <p>Direct engagement with sites already exposed to documented incursions.</p>
+                </div>
+                <div class="gtm-card secondary">
+                    <div class="badge">Secondary</div>
+                    <h4>Public event &amp; facility security</h4>
+                    <p>Rapid-deploy coverage for temporary, high-footfall perimeters.</p>
+                </div>
+            </div>
+
+            <div class="bracket-label" style="color:var(--steel);">Priority countries</div>
+            <div class="country-list">
+                <span class="country-chip">Germany</span>
+                <span class="country-chip">France</span>
+                <span class="country-chip">Estonia</span>
+                <span class="country-chip">Ukraine</span>
+                <span class="country-chip">Greece</span>
+                <span class="country-chip">Poland</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Support Section -->
+    <section class="team" id="partners">
+        <div class="wrap">
+            <div class="bracket-label">Partners &amp; support</div>
+            <div class="section-head">
+                <h2>Backed for development and deployment</h2>
+                <p>DE ORB's development and proof-of-concept work is supported by an industrial partner, an applied-research university, and a maritime logistics operator — with a signed letter of intent for PoC.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="person">
+                    <h4>Siemens Advanta</h4>
+                    <div class="role">Industrial &amp; technology partner</div>
+                    <p>Enterprise integration guidance and go-to-market support for critical-infrastructure buyers, drawing on the Siemens ecosystem.</p>
+                </div>
+                <div class="person">
+                    <h4>Hochschule Hamm-Lippstadt</h4>
+                    <div class="role">Applied research partner</div>
+                    <p>Independent validation of the sensor-fusion and classification algorithms through HSHL's applied electrical engineering research group.</p>
+                </div>
+                <div class="person">
+                    <h4>Inchcape Shipping Services</h4>
+                    <div class="role">Deployment &amp; logistics partner</div>
+                    <p>Operational support for field deployment and testing as the platform moves from prototype to proof-of-concept.</p>
+                </div>
+            </div>
+
+            <div class="advisor-strip">
+                Supported by <b>Siemens Advanta, Hochschule Hamm-Lippstadt &amp; Inchcape Shipping Services</b> for development and deployment — letter of intent signed for proof-of-concept.
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta" id="contact">
+        <div class="wrap cta-inner">
+            <div>
+                <div class="bracket-label">If not now, when?</div>
+                <h2>Ready to connect your site?</h2>
+                <p>The threat is documented. The gap is real. The team is assembled. We're looking for investors, partners, and pilot sites who understand the urgency.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="mailto:varnim@de-orb.com?subject=DE%20ORB%20Executive%20Briefing%20Request" onclick="openEmailBriefing(event)" class="btn btn-primary">Request a briefing</a>
+                <a href="mailto:varnim@de-orb.com?subject=DE%20ORB%20Inquiry" class="btn btn-ghost">varnim@de-orb.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractive Multi-Column Tactical Footer with Official Logo -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-top-grid">
+                <!-- Column 1: Brand & Logo -->
+                <div class="footer-brand-col">
+                    <img src="assets/images/de_orb_logo.png" alt="DE ORB Official Logo" class="footer-logo-img">
+                    <p class="footer-tagline">
+                        Tactical Counter Drone Systems — Sovereign multi-sensor airspace defence for critical European infrastructure.
+                    </p>
+                    <div class="footer-status-badge">
+                        <span class="footer-status-dot"></span>
+                        <span>ALL NODES OPERATIONAL // NUREMBERG HUB</span>
+                    </div>
+                </div>
+
+                <!-- Column 2: Platform -->
+                <div class="footer-col">
+                    <span class="footer-heading">[ PLATFORM ]</span>
+                    <ul class="footer-links">
+                        <li><a href="#solution">Sensor Fusion Brain</a></li>
+                        <li><a href="#solution">Decentralized Nodes</a></li>
+                        <li><a href="#solution">Bayesian Tracker</a></li>
+                        <li><a href="#solution">Directed Laser Effector</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Capabilities -->
+                <div class="footer-col">
+                    <span class="footer-heading">[ CAPABILITIES ]</span>
+                    <ul class="footer-links">
+                        <li><a href="#capabilities">Airports &amp; Infrastructure</a></li>
+                        <li><a href="#capabilities">Banks &amp; Energy Sites</a></li>
+                        <li><a href="#capabilities">Borders &amp; Public Events</a></li>
+                        <li><a href="#market">Market Opportunity</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Sovereign Security Box -->
+                <div class="footer-col">
+                    <span class="footer-heading">[ DEPLOYMENT ]</span>
+                    <div class="footer-sov-box">
+                        <h5>100% EU-SOVEREIGN</h5>
+                        <p>ITAR-Free defence infrastructure built to strengthen European technological independence.</p>
+                        <a href="mailto:varnim@de-orb.com?subject=DE%20ORB%20Deployment%20Inquiry" onclick="openEmailBriefing(event)" style="color: var(--green-bright); font-family: var(--font-mono); font-size: 0.8rem; text-decoration: none; margin-top: 4px; display: inline-block;">
+                            Contact Deployment Engineering ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom-bar">
+                <span>© 2026 DE ORB GMBH · CONFIDENTIAL</span>
+                <span>NUREMBERG, GERMANY // SAFE-ELIGIBLE</span>
+                <span>varnim@de-orb.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/radar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+/* -------------------------------------------------------------
+   DE ORB | FULL-SCREEN TACTICAL C2 RADAR & MESH WIDGET STYLESHEET
+   ------------------------------------------------------------- */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: rgba(10, 18, 16, 0.94);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.85), inset 0 0 40px rgba(51, 226, 122, 0.05);
+  overflow: hidden;
+  animation: floatAnim 6s ease-in-out infinite;
+}
+
+.visual-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.4rem;
+  background: rgba(16, 27, 23, 0.96);
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--steel-light);
+}
+
+.visual-controls {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.hud-chip {
+  padding: 4px 10px;
+  background: rgba(51, 226, 122, 0.12);
+  color: var(--green);
+  border: 1px solid var(--line-soft);
+  border-radius: 3px;
+  font-size: 0.75rem;
+}
+
+.hud-chip-cyan {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--cyan);
+  border-color: rgba(0, 229, 255, 0.35);
+}
+
+#radarCanvas {
+  width: 100%;
+  height: calc(100% - 46px);
+  display: block;
+  cursor: crosshair;
+}
