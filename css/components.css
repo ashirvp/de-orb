@@ -92,12 +92,10 @@ header.scrolled .navpill {
 
 .logo-tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--green);
-  background: rgba(51, 226, 122, 0.12);
-  padding: 3px 9px;
-  border-radius: 3px;
-  border: 1px solid rgba(51, 226, 122, 0.3);
+  font-size: 2rem;
+  color: var(--white);
+  padding: 0;
+  margin-left: 0.5rem;
   letter-spacing: 0.08em;
 }
 
@@ -1090,6 +1088,8 @@ td.rowlabel {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .country-chip {
