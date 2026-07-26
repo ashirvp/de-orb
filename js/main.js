@@ -22,24 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 
-  // Active Link Highlight on Scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
+  // Mobile navigation toggle
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  navToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      header.classList.toggle('nav-open');
     });
   });
+
+  // Scroll-in-view animation for sections
+  const allSections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+  allSections.forEach(sec => observer.observe(sec));
+
 });
