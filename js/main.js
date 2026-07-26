@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Direct Email Redirect for Briefing / Demo Requests
   window.openEmailBriefing = function(event) {
     if (event) event.preventDefault();
-    const email = "varnim@de-orb.com";
+    const email = "info@de-orb.com";
     const subject = encodeURIComponent("DE ORB — Executive Briefing / Demo Request");
     const body = encodeURIComponent("Hello DE ORB Team,\n\nI would like to request an executive briefing and demonstration of the DE ORB Sovereign Counter-Drone Intelligence Platform.\n\nOrganization:\nDeployment Requirements:\n\nBest regards,");
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
