@@ -119,6 +119,15 @@ section.in-view {
   }
 }
 
+/* Mobile fix for mesh-stage */
+@media (max-width: 600px) {
+  .mesh-stage {
+    height: 300px;
+    overflow: visible;
+  }
+}
+
+
 @media (max-width: 600px) {
   /* Keep header stable on scroll */
   header.scrolled .navpill { padding: 14px 4rem; }
