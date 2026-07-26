@@ -896,6 +896,12 @@ nav a:hover::before, nav a.active::before {
     width: 100%;
     display: block;
   }
+   .logo-img {
+     height: 30px;
+   }
+   .logo-tag {
+     font-size: 1.2rem;
+   }
 }
 
 .cap-tags {
@@ -1342,4 +1348,24 @@ footer::before {
   color: var(--steel);
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Drone animation */
+.drone-container {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  pointer-events: none;
+  z-index: 10;
+}
+.drone {
+  width: 80px;
+  animation: droneFly 12s linear infinite;
+}
+@keyframes droneFly {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(30vw) translateY(-10vh) rotate(10deg); }
+  50% { transform: translateX(60vw) translateY(0) rotate(0deg); }
+  75% { transform: translateX(90vw) translateY(10vh) rotate(-10deg); }
+  100% { transform: translateX(110vw) translateY(0) rotate(0deg); }
 }
