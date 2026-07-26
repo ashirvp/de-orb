@@ -896,12 +896,12 @@ nav a:hover::before, nav a.active::before {
     width: 100%;
     display: block;
   }
-   .logo-img {
-     height: 30px;
-   }
-   .logo-tag {
-     font-size: 1.2rem;
-   }
+  .logo-img {
+    height: 24px;
+  }
+  .logo-tag {
+    font-size: 1rem;
+  }
 }
 
 .cap-tags {
