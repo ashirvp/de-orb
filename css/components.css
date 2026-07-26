@@ -118,6 +118,12 @@ section.in-view {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  /* Keep header stable on scroll */
+  header.scrolled .navpill { padding: 14px 4rem; }
+  .logo-brand:hover { transform: none; }
+}
 /* Hover effect for navigation items */
 nav ul li a:hover {
   color: var(--green);
@@ -897,10 +903,10 @@ nav a:hover::before, nav a.active::before {
     display: block;
   }
   .logo-img {
-    height: 24px;
+    height: 28px;
   }
   .logo-tag {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
